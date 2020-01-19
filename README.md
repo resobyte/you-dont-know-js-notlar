@@ -30,3 +30,6 @@ boolean
 null and undefined
 object
 symbol (ES6'da yeni)
+
+typeof null ilginç bir durum, çünkü beklediğimiz sonuç "null" iken yanlış bir şekilde "object" sonucunu veriyor.
+
