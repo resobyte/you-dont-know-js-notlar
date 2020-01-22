@@ -78,3 +78,9 @@ Hoisting
 Mecazi olarak, bu davranış, bir varyant kavramsal olarak kapalı kapsamının üstüne "taşındığında" kaldırma olarak adlandırılır. Teknik olarak, bu işlem kodun nasıl derlendiğiyle daha doğru bir şekilde açıklanır, ancak şimdilik bu ayrıntıları atlayabiliriz.
 
 var olarak tekrar tanımlanması..
+
+Nested Scopes -> İlgili değişkenin fonksiyonda geçerliliğini, yönetmesi
+
+ternary operator. -> var b = (a > 41) ? "hello" : "world";
+
+
