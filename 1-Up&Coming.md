@@ -115,7 +115,7 @@ var x = (function IIFE(){
 x;	// 42
 ```
 
-##Closure
+## Closure
 
 Closure bir fonksiyonun, başka bir lexical scope tarafından çağırılsa bile kendi lexical scope’unu hatırlamasıdır.”
 Başka bir değişle; bir fonksiyon kendi kapsamı dışındaki bir değişkeni kullanıyorsa ve bu fonksiyon başka bir kapsamdan çalıştırılsa bile o değişkene hala erişimi vardır.
@@ -149,7 +149,7 @@ plusOne( 41 );		// 42 <-- 1 + 41
 plusTen( 13 );		// 23 <-- 10 + 13
 ```
 
-##Prototypes
+## Prototypes
 
 ```javascript
 var foo = {
@@ -165,7 +165,7 @@ bar.b;		// "hello world"
 bar.a;		// 42 <-- delegated to `foo`
 ```
 
-##Polyfilling
+## Polyfilling
 
 Bir kodun Tarayıcısında olup olmaksınızına bakmaksızın çalışmasını sağlar.
 
@@ -176,7 +176,7 @@ if (!Number.isNaN) {
 	};
 }
 ```
-##Transpiling
+## Transpiling
 Aslında kodun yine tarayıcıda eski ecmascript versiyonlarında kullanıp kullanılmadığına bakar. Bunun için babel yok mu? Acaba babel bunları mı kullanıyor? Edit: Evet devamında babel'in bunu yaptığını söylüyor.
 
 ```javascript
