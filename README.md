@@ -101,3 +101,75 @@ var x = (function IIFE(){
 })();
 
 x;	// 42
+
+Closure
+Closure bir fonksiyonun, başka bir lexical scope tarafından çağırılsa bile kendi lexical scope’unu hatırlamasıdır.”
+Başka bir değişle; bir fonksiyon kendi kapsamı dışındaki bir değişkeni kullanıyorsa ve bu fonksiyon başka bir kapsamdan çalıştırılsa bile o değişkene hala erişimi vardır.
+
+function makeAdder(x) {
+	// parameter `x` is an inner variable
+
+	// inner function `add()` uses `x`, so
+	// it has a "closure" over it
+	function add(y) {
+		return y + x;
+	};
+
+	return add;
+}
+
+// `plusOne` gets a reference to the inner `add(..)`
+// function with closure over the `x` parameter of
+// the outer `makeAdder(..)`
+var plusOne = makeAdder( 1 );
+
+// `plusTen` gets a reference to the inner `add(..)`
+// function with closure over the `x` parameter of
+// the outer `makeAdder(..)`
+var plusTen = makeAdder( 10 );
+
+plusOne( 3 );		// 4  <-- 1 + 3
+plusOne( 41 );		// 42 <-- 1 + 41
+
+plusTen( 13 );		// 23 <-- 10 + 13
+
+Prototypes
+
+var foo = {
+	a: 42
+};
+
+// create `bar` and link it to `foo`
+var bar = Object.create( foo );
+
+bar.b = "hello world";
+
+bar.b;		// "hello world"
+bar.a;		// 42 <-- delegated to `foo`
+
+
+Polyfilling
+Bir kodun Tarayıcısında olup olmaksınızına bakmaksızın çalışmasını sağlar.
+
+if (!Number.isNaN) {
+	Number.isNaN = function isNaN(x) {
+		return x !== x;
+	};
+}
+
+Transpiling
+Aslında kodun yine tarayıcıda eski ecmascript versiyonlarında kullanıp kullanılmadığına bakar. Bunun için babel yok mu? Acaba babel bunları mı kullanıyor? Edit: Evet devamında babel'in bunu yaptığını söylüyor.
+
+ES6 =>
+function foo(a = 2) {
+	console.log( a );
+}
+
+foo();		// 2
+foo( 42 );	// 42
+
+ES5
+function foo() {
+	var a = arguments[0] !== (void 0) ? arguments[0] : 2;
+	console.log( a );
+}
