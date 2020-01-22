@@ -83,4 +83,4 @@ Nested Scopes -> İlgili değişkenin fonksiyonda geçerliliğini, yönetmesi
 
 ternary operator. -> var b = (a > 41) ? "hello" : "world";
 
-
+"use strict"; Kodu katı moda çevirerek, var değişkenini vs kullanmanızı sağlar.
