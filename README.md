@@ -88,3 +88,16 @@ ternary operator. -> var b = (a > 41) ? "hello" : "world";
 function foo() {
 	// ..
 } => Bu da aslında bellekte bir değişkendir.
+
+Immediately Invoked Function Expressions (IIFEs)
+Fonksyionların direk çalıştırılması;
+(function IIFE(){
+	console.log( "Hello!" );
+})();
+// "Hello!"
+Geriye değer de döndürebilir.
+var x = (function IIFE(){
+	return 42;
+})();
+
+x;	// 42
